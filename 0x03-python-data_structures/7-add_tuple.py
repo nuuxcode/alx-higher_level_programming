@@ -1,13 +1,10 @@
 #!/usr/bin/python3
 def check_tuple(tuple=()):
-    lent = len(tuple)
-    if lent == 0:
+    if len(tuple) == 0:
         return 0, 0
-    if lent == 1:
-        tuple += 0,
-        return tuple
-    if lent >= 2:
-        return tuple[0], tuple[1]
+    if len(tuple) == 1:
+        return tuple[0], 0
+    return tuple
 
 
 def add_tuple(tuple_a=(), tuple_b=()):
