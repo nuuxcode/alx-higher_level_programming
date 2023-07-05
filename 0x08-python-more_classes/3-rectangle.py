@@ -15,12 +15,13 @@ class Rectangle:
 
     def __str__(self):
         string = ""
-        for i in range(0, self.__height):
-            for j in range(0, self.__width):
-                string += "#"
-            if i == self.__height-1:
-                break
-            string += "\n"
+        if self.__height != 0 and self.__width != 0:
+            for i in range(0, self.__height):
+                for j in range(0, self.__width):
+                    string += "#"
+                if i == self.__height-1:
+                    break
+                string += "\n"
         return string
 
     @property
