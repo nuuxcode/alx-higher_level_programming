@@ -1,0 +1,33 @@
+>>> add_integer = __import__('0-add_integer').add_integer
+
+TypeError tests
+
+>>> add_integer("a",1)
+Traceback (most recent call last):
+TypeError: a must be an integer
+>>> add_integer(1,"b")
+Traceback (most recent call last):
+TypeError: b must be an integer
+>>> add_integer("a","b")
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+Normal tests
+
+>>> add_integer(1,1)
+2
+>>> add_integer(1,-1)
+0
+>>> add_integer(-1,1)
+0
+>>> add_integer(1)
+99
+
+Test floats
+
+>>> add_integer(1.1,5.1)
+6
+>>> add_integer(1.1,-5.1)
+-4
+>>> add_integer(-1.1,5.1)
+4
