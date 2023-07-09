@@ -30,4 +30,16 @@ Test floats
 >>> add_integer(1.1,-5.1)
 -4
 >>> add_integer(-1.1,5.1)
-4
+
+
+Test NaN
+
+>>> add_integer('NaN',5.1)
+Traceback (most recent call last):
+TypeError: a must be an integer
+>>> add_integer(1.1,'NaN')
+Traceback (most recent call last):
+TypeError: b must be an integer
+>>> add_integer('NaN','NaN')
+Traceback (most recent call last):
+TypeError: a must be an integer
