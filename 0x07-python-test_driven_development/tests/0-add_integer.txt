@@ -30,7 +30,7 @@ Test floats
 >>> add_integer(1.1,-5.1)
 -4
 >>> add_integer(-1.1,5.1)
-
+4
 
 Test NaN
 
