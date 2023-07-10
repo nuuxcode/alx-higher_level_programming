@@ -26,3 +26,17 @@ ValueError: distance must be greater than 0
 Traceback (most recent call last):
 ...
 Exception: area() is not implemented
+
+>>> bg.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+>>> bg.integer_validator("distance")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+
+
+
