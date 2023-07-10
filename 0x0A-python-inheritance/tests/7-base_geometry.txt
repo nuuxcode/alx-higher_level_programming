@@ -37,6 +37,52 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: integer_validator() missing 1 required positional argument: 'value'
 
+---
+
+>>> bg.integer_validator("age", None)
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
 
 
+>>> bg.integer_validator("age", [3])
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
 
+>>> bg.integer_validator("age", (5,))
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
+
+>>> bg.integer_validator("age", {3, 4})
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("name", True)
+Traceback (most recent call last):
+            ...
+TypeError: name must be an integer
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("name", 1, 2)
+Traceback (most recent call last):
+            ...
+TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+------
+
+
+>>> bg = BaseGeometry()
+>>> bg.area(5)
+Traceback (most recent call last):
+            ...
+TypeError: area() takes 1 positional argument but 2 were given
+
+>>> bg = BaseGeometry()
+>>> bg.area(5, 5)
+Traceback (most recent call last):
+            ...
+TypeError: area() takes 1 positional argument but 3 were given
