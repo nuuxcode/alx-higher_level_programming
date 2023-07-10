@@ -21,3 +21,8 @@ ValueError: age must be greater than 0
 Traceback (most recent call last):
 ...
 ValueError: distance must be greater than 0
+
+>>> bg.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
