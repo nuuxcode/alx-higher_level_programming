@@ -1,10 +1,8 @@
 >>> MyList = __import__('1-my_list').MyList
 
-
-
->>> my_list = MyList([10,-5]) #checker14
+>>> my_list = MyList([-10,-5]) #checker14
 >>> my_list.print_sorted()
-[-5, 10]
+[-10, -5]
 
 >>> my_list = MyList([]) #checker18
 >>> my_list.print_sorted()
