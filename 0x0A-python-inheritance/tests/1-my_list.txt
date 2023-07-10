@@ -12,3 +12,11 @@
 
 >>> my_list.print_sorted()
 [1, 3, 5, 10]
+
+>>> my_list = MyList([10])
+>>> my_list.print_sorted()
+[10]
+
+>>> my_list = MyList([10,-5])
+>>> my_list.print_sorted()
+[-5, 10]
