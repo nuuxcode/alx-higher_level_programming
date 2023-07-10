@@ -18,5 +18,7 @@
 >>> my_list.append(2)
 >>> my_list.append(3)
 >>> my_list.append(5)
->>> my_list.print_sorted()
+>>> my_list.print_sorted() #checker22
 [1, 2, 3, 4, 5]
+>>> print(my_list) #checker22
+[1, 4, 2, 3, 5]
