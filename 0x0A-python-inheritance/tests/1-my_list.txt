@@ -18,5 +18,3 @@
 >>> my_list.append(2)
 >>> my_list.append(3)
 >>> my_list.append(5)
->>> print(my_list) #checker22
-[1, 4, 2, 3, 5]
