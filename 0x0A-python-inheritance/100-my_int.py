@@ -11,7 +11,7 @@ class MyInt(int):
         self.num = num
 
     def __eq__(self, num2):
-        return self.num == num2
+        return self.num != num2
 
     def __ne__(self, num2):
-        return self.num != num2
+        return self.num == num2
