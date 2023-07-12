@@ -3,6 +3,7 @@
 
 
 def append_after(filename="", search_string="", new_string=""):
+    """def """
     ip = 1
     with open(filename, 'r') as f:
         lines = f.readlines()
