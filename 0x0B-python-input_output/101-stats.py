@@ -24,6 +24,11 @@ try:
         line = line.rstrip()
         globaldata[0]["File size"] += int(line.split()[-1])
         globaldata[0][line.split()[-2]] += 1
+    if counter > 0:
+        for key, value in globaldata[0].items():
+            if value == 0:
+                continue
+            print(key, ":", value)
 except KeyboardInterrupt as e:
     for key, value in globaldata[0].items():
         if value == 0:
