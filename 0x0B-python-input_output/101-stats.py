@@ -17,7 +17,8 @@ try:
             for key, value in globaldata[0].items():
                 if value == 0:
                     continue
-                print(key, ":", value)
+                print(key+": "+str(value))
+                sys.stdout.flush()
         counter += 1
         if counter == 1:
             globaldata.insert(0, data.copy())
@@ -28,11 +29,12 @@ try:
         for key, value in globaldata[0].items():
             if value == 0:
                 continue
-            print(key, ":", value)
+            print(key+": "+str(value))
+            sys.stdout.flush()
 except KeyboardInterrupt as e:
     for key, value in globaldata[0].items():
         if value == 0:
             continue
-        print(key, ":", value)
+        print(key+": "+str(value))
         sys.stdout.flush()
     print(e)
