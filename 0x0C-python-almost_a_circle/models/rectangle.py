@@ -39,6 +39,16 @@ class Rectangle(Base):
     def area(self):
         return self.__width * self.__height
 
+    def display(self):
+        string = ""
+        for i in range(0, self.__height):
+                for j in range(0, self.__width):
+                    string += "#"
+                if i == self.__height-1:
+                    break
+                string += "\n"
+        print(string)
+
     @property
     def width(self):
         return self.__width
