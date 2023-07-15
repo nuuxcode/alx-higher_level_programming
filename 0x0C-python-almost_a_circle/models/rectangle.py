@@ -41,13 +41,24 @@ class Rectangle(Base):
 
     def display(self):
         string = ""
-        for i in range(0, self.__height):
-                for j in range(0, self.__width):
-                    string += "#"
-                if i == self.__height-1:
-                    break
+        for i in range(0, self.__height+self.__y):
+            if self.__y > i:
                 string += "\n"
-        print(string)
+                continue
+            for j in range(0, self.__width+self.__x):
+                if j >= self.__x:
+                    string += "#"
+                else:
+                    string += " "
+            if i == self.__height+self.__y-1:
+                string += "\n"
+                break
+            string += "\n"
+        print(string, end="")
+
+    def __str__(self):
+        return f"[Rectangle] ({self.id}) \
+{self.__x}/{self.__y} {self.__width}/{self.__height}"
 
     @property
     def width(self):
