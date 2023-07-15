@@ -6,6 +6,14 @@ from models.base import Base
 class Rectangle(Base):
     """ class doc """
 
+    def __init__(self, width, height, x=0, y=0, id=None):
+        self.checks(width, height, x, y)
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
+        super().__init__(id)
+
     def check_int(self, attr, val):
         if not isinstance(val, int):
             raise TypeError(f"{attr} must be an integer")
@@ -28,13 +36,8 @@ class Rectangle(Base):
         self.check_positive_zero("x", x)
         self.check_positive_zero("y", y)
 
-    def __init__(self, width, height, x=0, y=0, id=None):
-        self.checks(width, height, x, y)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
-        super().__init__(id)
+    def area(self):
+        return self.__width * self.__height
 
     @property
     def width(self):
