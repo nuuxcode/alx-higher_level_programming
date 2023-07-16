@@ -60,13 +60,21 @@ class Rectangle(Base):
         return f"[Rectangle] ({self.id}) \
 {self.__x}/{self.__y} {self.__width}/{self.__height}"
 
-    def update(self, *args):
-        if len(args) >= 1:
-            super().__init__(args[0])
-        width = args[1] if len(args) >= 2 else self.__width
-        height = args[2] if len(args) >= 3 else self.__height
-        x = args[3] if len(args) >= 4 else self.__x
-        y = args[4] if len(args) >= 5 else self.__y
+    def update(self, *args, **kwargs):
+        if len(args) == 0:
+            id = kwargs["id"] if "id" in kwargs else self.id
+            super().__init__(id)
+            width = kwargs["width"] if "width" in kwargs else self.__width
+            height = kwargs["height"] if "height" in kwargs else self.__height
+            x = kwargs["x"] if "x" in kwargs else self.__x
+            y = kwargs["y"] if "y" in kwargs else self.__y
+        else:
+            if len(args) >= 1:
+                super().__init__(args[0])
+            width = args[1] if len(args) >= 2 else self.__width
+            height = args[2] if len(args) >= 3 else self.__height
+            x = args[3] if len(args) >= 4 else self.__x
+            y = args[4] if len(args) >= 5 else self.__y
         self.checks(width, height, x, y)
         self.width = width
         self.height = height
