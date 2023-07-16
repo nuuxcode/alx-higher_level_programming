@@ -27,3 +27,8 @@ class Base:
             for ele in list_objs:
                 list.append(ele.to_dictionary())
             json.dump(json.loads(cls.to_json_string(list)), f)
+
+    def from_json_string(json_string):
+        if json_string is None:
+            return []
+        return json.loads(json_string)
