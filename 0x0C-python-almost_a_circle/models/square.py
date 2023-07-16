@@ -22,3 +22,21 @@ class Square(Rectangle):
         self.check_int("width", val)
         self.check_positive("width", val)
         self.width = val
+
+    def update(self, *args, **kwargs):
+        if len(args) == 0:
+            id = kwargs["id"] if "id" in kwargs else self.id
+            self.id = id
+            size = kwargs["size"] if "size" in kwargs else self.width
+            x = kwargs["x"] if "x" in kwargs else self.x
+            y = kwargs["y"] if "y" in kwargs else self.y
+        else:
+            if len(args) >= 1:
+                self.id = args[0]
+            size = args[1] if len(args) >= 2 else self.width
+            x = args[2] if len(args) >= 4 else self.x
+            y = args[3] if len(args) >= 5 else self.y
+        self.checks(size, size, x, y)
+        self.width = size
+        self.x = x
+        self.y = y
