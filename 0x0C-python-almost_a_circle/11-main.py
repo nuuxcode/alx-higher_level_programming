@@ -12,7 +12,9 @@ if __name__ == "__main__":
 
     s1.update(1, 2)
     print(s1)
-
+# id x y width
+#(id,size,x,y)
+    print("-----")
     s1.update(1, 2, 3)
     print(s1)
 
@@ -21,7 +23,9 @@ if __name__ == "__main__":
 
     s1.update(x=12)
     print(s1)
+#
 
+    print("-----")
     s1.update(size=7, y=1)
     print(s1)
 

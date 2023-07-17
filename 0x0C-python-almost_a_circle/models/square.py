@@ -39,8 +39,8 @@ class Square(Rectangle):
             if len(args) >= 1:
                 self.id = args[0]
             size = args[1] if len(args) >= 2 else self.width
-            x = args[2] if len(args) >= 4 else self.x
-            y = args[3] if len(args) >= 5 else self.y
+            x = args[2] if len(args) >= 3 else self.x
+            y = args[3] if len(args) >= 4 else self.y
         self.checks(size, size, x, y)
         self.width = size
         self.x = x
