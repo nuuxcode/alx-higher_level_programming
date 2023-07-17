@@ -20,3 +20,7 @@ if __name__ == "__main__":
     json_dictionary = Base.to_json_string([])
     print(json_dictionary)
     print(type(json_dictionary))
+
+    json_dictionary = Base.to_json_string({"key":0})
+    print(json_dictionary)
+    print(type(json_dictionary))

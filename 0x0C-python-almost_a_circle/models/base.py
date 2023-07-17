@@ -29,9 +29,12 @@ class Base:
         filename = cls.__name__+".json"
         with open(filename, 'w', encoding="utf-8") as f:
             list = []
-            for ele in list_objs:
-                list.append(ele.to_dictionary())
-            json.dump(json.loads(cls.to_json_string(list)), f)
+            if list_objs is None or len(list_objs) == 0:
+                json.dump(json.loads(cls.to_json_string(list)), f)
+            else:
+                for ele in list_objs:
+                    list.append(ele.to_dictionary())
+                json.dump(json.loads(cls.to_json_string(list)), f)
 
     @staticmethod
     def from_json_string(json_string):
