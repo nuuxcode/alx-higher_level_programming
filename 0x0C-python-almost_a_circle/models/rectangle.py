@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-""" module doc """
+""" module doc for rectangle """
 from models.base import Base
 
 
 class Rectangle(Base):
-    """ class doc """
+    """ class doc for rectangle """
 
     def __init__(self, width, height, x=0, y=0, id=None):
         self.checks(width, height, x, y)

@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-""" test rectangle """
+""" unit test for bases """
 import unittest
 from models.base import Base
 
 
 class BaseTestCase(unittest.TestCase):
-    """ test """
+    """ class for base test """
 
     def test_base_id_increment(self):
         b1 = Base()

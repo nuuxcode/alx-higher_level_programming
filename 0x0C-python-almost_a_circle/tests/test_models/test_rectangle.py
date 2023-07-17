@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-""" test rectangle """
+""" unit test for rectangle """
 import unittest
 from models.rectangle import Rectangle
 
 
 class RectangleTestCase(unittest.TestCase):
-    """ test """
+    """ test class for rectangle """
 
     def test_Rectangle_id_increment(self):
         b1 = Rectangle()

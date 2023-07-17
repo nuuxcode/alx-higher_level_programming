@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-""" module doc """
+""" module doc for square """
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """ class doc """
+    """ class doc for square """
 
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)

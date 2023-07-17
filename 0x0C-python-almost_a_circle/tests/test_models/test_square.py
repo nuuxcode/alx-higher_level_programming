@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-""" test rectangle """
+""" unit test for square """
 import unittest
 from models.square import Square
 
 
 class SquareTestCase(unittest.TestCase):
-    """ test """
+    """ class for square test """
 
     def test_Square_id_increment(self):
         b1 = Square()

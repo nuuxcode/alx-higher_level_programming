@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" module doc """
+""" module doc for base """
 import json
 
 
