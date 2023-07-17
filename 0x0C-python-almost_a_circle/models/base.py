@@ -56,9 +56,12 @@ class Base:
     def load_from_file(cls):
         """ func doc """
         filename = cls.__name__+".json"
-        with open(filename, encoding="utf-8") as f:
-            newlist = []
-            dict = cls.from_json_string(json.dumps(json.load(f)))
-            for ele in dict:
-                newlist.append(cls.create(**ele))
-            return newlist
+        try:
+            with open(filename, encoding="utf-8") as f:
+                newlist = []
+                dict = cls.from_json_string(json.dumps(json.load(f)))
+                for ele in dict:
+                    newlist.append(cls.create(**ele))
+                return newlist
+        except FileNotFoundError:
+            return []

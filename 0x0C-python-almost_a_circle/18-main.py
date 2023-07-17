@@ -12,7 +12,6 @@ if __name__ == "__main__":
     Rectangle.save_to_file(list_rectangles_input)
 
     list_rectangles_output = Rectangle.load_from_file()
-
     for rect in list_rectangles_input:
         print("[{}] {}".format(id(rect), rect))
 
