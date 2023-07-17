@@ -92,7 +92,8 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """ func doc """
-        return {'x': self.x, 'y': self.y, 'id': self.id, 'height': self.height, 'width': self.width}
+        return {'x': self.x, 'y': self.y, 'id': self.id,
+                'height': self.height, 'width': self.width}
 
     @property
     def width(self):
