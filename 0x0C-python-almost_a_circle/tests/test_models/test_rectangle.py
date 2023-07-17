@@ -8,6 +8,7 @@ class RectangleTestCase(unittest.TestCase):
     """ test class for rectangle """
 
     def test_Rectangle(self):
+        """ rectangle func """
         r1 = Rectangle(10, 2)
         self.assertEqual(r1.id, 1)
 
