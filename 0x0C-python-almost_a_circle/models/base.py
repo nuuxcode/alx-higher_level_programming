@@ -18,8 +18,7 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """ func doc """
-        if list_dictionaries is None or type(list_dictionaries) != list\
-                or len(list_dictionaries) == 0:
+        if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         return json.dumps(list_dictionaries)
 
@@ -61,9 +60,5 @@ class Base:
             newlist = []
             dict = cls.from_json_string(json.dumps(json.load(f)))
             for ele in dict:
-                if cls.__name__ == "Square":
-                    del ele["height"]
-                    ele["size"] = ele["width"]
-                    del ele["width"]
                 newlist.append(cls.create(**ele))
             return newlist
