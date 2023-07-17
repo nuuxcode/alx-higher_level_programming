@@ -13,7 +13,7 @@ class Square(Rectangle):
     def __str__(self):
         """ func doc """
         return f"[Square] ({self.id}) \
-{self.x}/{self.y} {self.width}"
+{self.x}/{self.y} - {self.width}"
 
     @property
     def size(self):
