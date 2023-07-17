@@ -14,6 +14,7 @@ class Base:
         if id is None:
             self.__class__.__nb_objects += 1
             self.id = self.__class__.__nb_objects
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """ func doc """
@@ -31,6 +32,7 @@ class Base:
                 list.append(ele.to_dictionary())
             json.dump(json.loads(cls.to_json_string(list)), f)
 
+    @staticmethod
     def from_json_string(json_string):
         """ func doc """
         if json_string is None:

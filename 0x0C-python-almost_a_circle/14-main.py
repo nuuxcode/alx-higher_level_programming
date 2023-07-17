@@ -13,7 +13,6 @@ if __name__ == "__main__":
     print(json_dictionary)
     print(type(json_dictionary))
 
-
     json_dictionary = Base.to_json_string(None)
     print(json_dictionary)
     print(type(json_dictionary))
