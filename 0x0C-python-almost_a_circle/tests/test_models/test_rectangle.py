@@ -1,14 +1,22 @@
 #!/usr/bin/python3
 """ unit test for rectangle """
 import unittest
+from models.square import Square
 from models.rectangle import Rectangle
+from models.base import Base
 
 
 class RectangleTestCase(unittest.TestCase):
     """ test class for rectangle """
+    def setUp(self):
+        """
+        Resets id
+        """
+        Base._Base__nb_objects = 0
 
-    def test_Rectangle(self):
+    def test_rectangle_task2(self):
         """ rectangle func """
+
         r1 = Rectangle(10, 2)
         self.assertEqual(r1.id, 1)
 
