@@ -7,23 +7,28 @@ class Square(Rectangle):
     """ class doc for square """
 
     def __init__(self, size, x=0, y=0, id=None):
+        """ func doc """
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
+        """ func doc """
         return f"[Square] ({self.id}) \
 {self.x}/{self.y} {self.width}"
 
     @property
     def size(self):
+        """ func doc """
         return self.width
 
     @size.setter
     def size(self, val):
+        """ func doc """
         self.check_int("width", val)
         self.check_positive("width", val)
         self.width = val
 
     def update(self, *args, **kwargs):
+        """ func doc """
         if len(args) == 0:
             id = kwargs["id"] if "id" in kwargs else self.id
             self.id = id
@@ -41,5 +46,6 @@ class Square(Rectangle):
         self.x = x
         self.y = y
 
-        def to_dictionary(self):
-            return {'id': self.id, 'x': self.x, 'size': self.size, 'y': self.y}
+    def to_dictionary(self):
+        """ func doc """
+        return {'id': self.id, 'x': self.x, 'size': self.size, 'y': self.y}

@@ -7,6 +7,7 @@ class Rectangle(Base):
     """ class doc for rectangle """
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """ func doc """
         self.checks(width, height, x, y)
         self.__width = width
         self.__height = height
@@ -15,18 +16,22 @@ class Rectangle(Base):
         super().__init__(id)
 
     def check_int(self, attr, val):
+        """ func doc """
         if not isinstance(val, int):
             raise TypeError(f"{attr} must be an integer")
 
     def check_positive(self, attr, val):
+        """ func doc """
         if val <= 0:
             raise ValueError(f"{attr} must be > 0")
 
     def check_positive_zero(self, attr, val):
+        """ func doc """
         if val < 0:
             raise ValueError(f"{attr} must be >= 0")
 
     def checks(self, width, height, x, y):
+        """ func doc """
         self.check_int("width", width)
         self.check_int("height", height)
         self.check_int("x", x)
@@ -37,9 +42,11 @@ class Rectangle(Base):
         self.check_positive_zero("y", y)
 
     def area(self):
+        """ func doc """
         return self.__width * self.__height
 
     def display(self):
+        """ func doc """
         string = ""
         for i in range(0, self.__height+self.__y):
             if self.__y > i:
@@ -57,10 +64,12 @@ class Rectangle(Base):
         print(string, end="")
 
     def __str__(self):
+        """ func doc """
         return f"[Rectangle] ({self.id}) \
 {self.__x}/{self.__y} {self.__width}/{self.__height}"
 
     def update(self, *args, **kwargs):
+        """ func doc """
         if len(args) == 0:
             id = kwargs["id"] if "id" in kwargs else self.id
             super().__init__(id)
@@ -82,44 +91,53 @@ class Rectangle(Base):
         self.y = y
 
     def to_dictionary(self):
+        """ func doc """
         return {'x': self.x, 'y': self.y, 'id': self.id, 'height': self.height, 'width': self.width}
 
     @property
     def width(self):
+        """ func doc """
         return self.__width
 
     @width.setter
     def width(self, val):
+        """ func doc """
         self.check_int("width", val)
         self.check_positive("width", val)
         self.__width = val
 
     @property
     def height(self):
+        """ func doc """
         return self.__height
 
     @height.setter
     def height(self, val):
+        """ func doc """
         self.check_int("height", val)
         self.check_positive("height", val)
         self.__height = val
 
     @property
     def x(self):
+        """ func doc """
         return self.__x
 
     @x.setter
     def x(self, val):
+        """ func doc """
         self.check_int("x", val)
         self.check_positive_zero("x", val)
         self.__x = val
 
     @property
     def y(self):
+        """ func doc """
         return self.__y
 
     @y.setter
     def y(self, val):
+        """ func doc """
         self.check_int("y", val)
         self.check_positive_zero("y", val)
         self.__y = val
