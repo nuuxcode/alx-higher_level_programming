@@ -8,6 +8,7 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """ func doc """
         if id is not None:
             self.id = id
         if id is None:
@@ -15,12 +16,14 @@ class Base:
             self.id = self.__class__.__nb_objects
 
     def to_json_string(list_dictionaries):
+        """ func doc """
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """ func doc """
         filename = cls.__name__+".json"
         with open(filename, 'w', encoding="utf-8") as f:
             list = []
@@ -29,12 +32,14 @@ class Base:
             json.dump(json.loads(cls.to_json_string(list)), f)
 
     def from_json_string(json_string):
+        """ func doc """
         if json_string is None:
             return []
         return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
+        """ func doc """
         if cls.__name__ == "Square":
             dummy = cls(1)
         if cls.__name__ == "Rectangle":
@@ -44,6 +49,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """ func doc """
         filename = cls.__name__+".json"
         with open(filename, encoding="utf-8") as f:
             newlist = []
