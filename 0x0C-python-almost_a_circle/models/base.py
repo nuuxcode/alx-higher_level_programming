@@ -35,4 +35,23 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        return cls(**dictionary)
+        if cls.__name__ == "Square":
+            dummy = cls(1)
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        dummy.update(**dictionary)
+        return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        filename = cls.__name__+".json"
+        with open(filename, encoding="utf-8") as f:
+            newlist = []
+            dict = cls.from_json_string(json.dumps(json.load(f)))
+            for ele in dict:
+                if cls.__name__ == "Square":
+                    del ele["height"]
+                    ele["size"] = ele["width"]
+                    del ele["width"]
+                newlist.append(cls.create(**ele))
+            return newlist
