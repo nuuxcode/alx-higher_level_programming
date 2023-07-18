@@ -14,7 +14,7 @@ class RectangleTestCase(unittest.TestCase):
         """
         Base._Base__nb_objects = 0
 
-    def test_rectangle_task2(self):
+    def test_rectangle(self):
         """ rectangle func """
 
         r1 = Rectangle(10, 2)
@@ -25,6 +25,9 @@ class RectangleTestCase(unittest.TestCase):
 
         r3 = Rectangle(10, 2, 0, 0, 12)
         self.assertEqual(r3.id, 12)
+
+        r4 = Rectangle(1, 2)
+        self.assertEqual(r4.id, 3)
 
 
 if __name__ == '__main__':
