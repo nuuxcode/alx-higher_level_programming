@@ -29,6 +29,35 @@ class RectangleTestCase(unittest.TestCase):
         r4 = Rectangle(1, 2)
         self.assertEqual(r4.id, 3)
 
+        r5 = Rectangle(1, 2, 3)
+        self.assertEqual(r5.id, 4)
+
+        r5 = Rectangle(1, 2, 3, 4)
+        self.assertEqual(r5.id, 5)
+
+        with self.assertRaises(TypeError):
+            Rectangle("1", 2)
+
+        with self.assertRaises(TypeError):
+            Rectangle(1, "2")
+
+        with self.assertRaises(TypeError):
+            Rectangle(1, 2, "3")
+
+        with self.assertRaises(TypeError):
+            Rectangle(1, 2, 3, "4")
+
+        with self.assertRaises(ValueError):
+            Rectangle(-1, 2)
+
+        with self.assertRaises(ValueError):
+            Rectangle(1, -2)
+
+        with self.assertRaises(ValueError):
+            Rectangle(0, -2)
+
+        with self.assertRaises(ValueError):
+            Rectangle(1, 0)
 
 if __name__ == '__main__':
     unittest.main()
