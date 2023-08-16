@@ -3,6 +3,8 @@
 -- echo 'SELECT * FROM cities;' | sudo mysql -hlocalhost -uroot -p hbtn_0d_usa
 -- cat 9-cities_by_state_join.sql | sudo mysql -hlocalhost -uroot -p hbtn_0d_usa
 
-SELECT id, name, (SELECT name FROM states WHERE id = cities.state_id) AS ""
-FROM cities;
+SELECT c.id, c.name, s.name
+FROM cities c
+JOIN states s ON c.state_id = s.id;
 
+-- (SELECT name FROM states WHERE id = cities.state_id) AS ""
