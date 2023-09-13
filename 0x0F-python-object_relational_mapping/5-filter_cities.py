@@ -8,18 +8,19 @@ if __name__ == "__main__":
     db_password = sys.argv[2]  # "your_password"
     db_name = sys.argv[3]  # "your_database_name"
     port = 3306
-    state_name = sys.argv[4]  # "your_database_name"
-    query = "SELECT * FROM states WHERE name =\
- '{}' ORDER BY id ASC".format(state_name)
+    state_name = MySQLdb.escape_string(sys.argv[4])  # "your_database_name"
+    query = "SELECT name FROM cities WHERE state_id = \
+(SELECT id FROM states WHERE name = %s) ORDER BY cities.id ASC"
+    params = (state_name,)
     db = MySQLdb.connect(
         host=db_host, user=db_user, passwd=db_password, db=db_name, port=port
     )
     cursor = db.cursor()
 
-    cursor.execute(query)
+    cursor.execute(query, params)
     rows = cursor.fetchall()
-
+    tuples = ()
     for row in rows:
-        print(row)
-
+        tuples += row
+    print(*tuples, sep=", ")
     db.close()
