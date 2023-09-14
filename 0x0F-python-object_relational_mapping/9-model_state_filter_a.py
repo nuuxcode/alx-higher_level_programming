@@ -13,11 +13,10 @@ if __name__ == "__main__":
         pool_pre_ping=True,
     )
     with engine.connect() as connection:
-        query = select([State]).order_by(State.id.asc())
-        state = connection.execute(query).fetchone()
-        if state:
+        query = select([State]).order_by(State.id.asc()) \
+            .where(State.name.like("%a%"))
+        states = connection.execute(query)
+        for state in states:
             print(f"{state.id}: {state.name}")
-        else:
-            print("Nothing")
 
     engine.dispose()
