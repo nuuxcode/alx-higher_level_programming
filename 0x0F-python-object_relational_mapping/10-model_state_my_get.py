@@ -12,7 +12,7 @@ if __name__ == "__main__":
         ),
         pool_pre_ping=True,
     )
-    state_name = sys.argv[4]
+    state_name = MySQLdb.escape_string(sys.argv[4])
     with engine.connect() as connection:
         query = select([State]) \
             .where(text("name = :name").bindparams(name=state_name))
@@ -21,6 +21,6 @@ if __name__ == "__main__":
             for state in states:
                 print(state[0])
         else:
-            print("Nothing")
+            print("Not found")
 
     engine.dispose()
