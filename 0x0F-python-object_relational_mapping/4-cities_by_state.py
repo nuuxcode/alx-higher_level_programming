@@ -16,7 +16,9 @@ if __name__ == "__main__":
     )
     cursor = db.cursor()
 
-    cursor.execute("SELECT * FROM cities ORDER BY id ASC")
+    cursor.execute("SELECT cities.id, cities.name, states.name FROM cities \
+    JOIN states ON states.id = cities.state_id \
+    ORDER BY cities.id")
     rows = cursor.fetchall()
 
     for row in rows:
@@ -24,5 +26,3 @@ if __name__ == "__main__":
 
     cursor.close()
     db.close()
-
-# TODO JOIN TABLE
