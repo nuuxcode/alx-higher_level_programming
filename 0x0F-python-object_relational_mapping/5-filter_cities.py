@@ -12,7 +12,7 @@ if __name__ == "__main__":
     port = 3306
     state_name = MySQLdb.escape_string(sys.argv[4])  # "your_database_name"
     query = "SELECT name FROM cities WHERE state_id = \
-(SELECT id FROM states WHERE name = %s) ORDER BY cities.id ASC"
+(SELECT id FROM states WHERE name LIKE BINARY %s) ORDER BY cities.id ASC"
     params = (state_name,)
     db = MySQLdb.connect(
         host=db_host, user=db_user, passwd=db_password, db=db_name, port=port
