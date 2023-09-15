@@ -13,7 +13,7 @@ class State(Base):
     __tablename__ = 'states'
     __table_args__ = {'mysql_charset': 'latin1'}
 
-    id = Column(INTEGER(11), primary_key=True, nullable=False)
+    id = Column(Integer, primary_key=True, nullable=False)
     name = Column(String(128), nullable=False)
 
     def __init__(self, name):
