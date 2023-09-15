@@ -13,7 +13,7 @@ if __name__ == "__main__":
         pool_pre_ping=True,
     )
     with engine.connect() as connection:
-        query = select([State]).order_by(State.id.asc())
+        query = select(State).order_by(State.id.asc())
         state = connection.execute(query).fetchone()
         if state:
             print(f"{state.id}: {state.name}")

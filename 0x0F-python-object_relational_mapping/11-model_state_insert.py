@@ -13,11 +13,13 @@ if __name__ == "__main__":
         pool_pre_ping=True,
     )
     with engine.connect() as connection:
+        transaction = connection.begin()
         query = insert(State).values(name="Louisiana")
         connection.execute(query)
-        query = select([State]).where(State.name == "Louisiana").\
-            order_by(State.id.desc())
-        states = connection.execute(query)
-        print(states.first()[0])
+        query = select(State).where(State.name == "Louisiana")
+        state = connection.execute(query).fetchone()
+        if state:
+            print(state.id)
+        transaction.commit()
 
     engine.dispose()

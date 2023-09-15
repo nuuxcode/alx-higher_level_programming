@@ -13,7 +13,7 @@ if __name__ == "__main__":
         pool_pre_ping=True,
     )
     with engine.connect() as connection:
-        query = select([State]).order_by(State.id.asc()) \
+        query = select(State).order_by(State.id.asc()) \
             .where(State.name.like("%a%"))
         states = connection.execute(query)
         for state in states:
