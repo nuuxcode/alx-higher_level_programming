@@ -9,6 +9,7 @@ Base = declarative_base()
 
 
 class State(Base):
+    """ class class """
     __tablename__ = 'states'
     __table_args__ = {'mysql_charset': 'latin1'}
 
@@ -16,4 +17,5 @@ class State(Base):
     name = Column(String(128), nullable=False)
 
     def __init__(self, name):
+        """ class """
         self.name = name
