@@ -1,3 +1,3 @@
 #!/bin/bash
 # cURL to the 3nd
-curl -L "$1"
+curl -s -L "$1"
