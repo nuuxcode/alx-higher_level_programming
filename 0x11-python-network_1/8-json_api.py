@@ -11,8 +11,11 @@ if __name__ == "__main__":
     url = "http://0.0.0.0:5000/search_user"
     params = {"q": q}
     res = requests.post(url, data=params)
-    resjson = res.json()
-    if resjson:
-        print(f"[{resjson["id"]}] {resjson["name"]}")
-    else:
-        print("No result")
+    try:
+        resjson = res.json()
+        if resjson:
+            print(f"[{resjson["id"]}] {resjson["name"]}")
+        else:
+            print("No result")
+    except response.json.decoder.JSONDecodeError:
+        print("Not a valid JSON")
