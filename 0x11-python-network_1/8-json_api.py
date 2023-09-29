@@ -17,5 +17,5 @@ if __name__ == "__main__":
             print(f"[{resjson["id"]}] {resjson["name"]}")
         else:
             print("No result")
-    except response.json.decoder.JSONDecodeError:
+    except Exception:
         print("Not a valid JSON")
