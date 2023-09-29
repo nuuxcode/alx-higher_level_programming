@@ -14,7 +14,7 @@ if __name__ == "__main__":
     try:
         resjson = res.json()
         if resjson:
-            print(f"[{resjson["id"]}] {resjson["name"]}")
+            print(f'[{resjson["id"]}] {resjson["name"]}')
         else:
             print("No result")
     except Exception:
