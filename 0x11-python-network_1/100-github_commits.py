@@ -6,8 +6,8 @@ import requests
 
 def main():
     """ def com """
-    repo = sys.argv[1]
-    owner = sys.argv[2]
+    owner = sys.argv[1]
+    repo = sys.argv[2]
     limit = 10
     url = f'https://api.github.com/repos\
 /{repo}/{owner}/commits?per_page={limit}'
